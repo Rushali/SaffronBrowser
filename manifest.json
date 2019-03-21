@@ -1,0 +1,26 @@
+
+{
+  "manifest_version": 2,
+  "name": "Saffron Browser",
+  "version": "0.1",
+  "description": "A chrome extension to calm certain saffron urges digitally in the hopes of curbing real world chaos",
+  "permissions": ["tabs","<all_urls>"],
+  "icons": {
+    "128": "icon128.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "images/*.jpg",
+    "images/*.png",
+    "mandir.mp3"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "<all_urls>"
+    ],
+    "js": ["content.js"]
+  }]
+}
